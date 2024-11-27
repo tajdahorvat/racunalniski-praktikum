@@ -8,7 +8,9 @@
 \usepackage{graphicx}
 \usepackage{amsthm}
 \usepackage{booktabs}
+\usepackage{xcolor}
 
+\newcommand{\pojem}[1]{\emph{\color{purple}#1}}
 
 % Nastavimo koliko prostora izpustimo pod napisom nad sliko ali tabelo.
 \setlength{\belowcaptionskip}{2mm}
@@ -71,7 +73,7 @@ Prirejeno iz virov:
 \section{Uvod}
 
 \begin{definicija}
-   \emph{Magični kvadrat} reda $n$ je nabor $n^2$ različnih števil,
+   \pojem{Magični kvadrat} reda $n$ je nabor $n^2$ različnih števil,
    ki so razvrščena v kvadratno tabelo tako, da vedno dobimo enako vsoto,
    če seštejemo vsa števila poljubne vrstice, vsa števila poljubnega
    stolpca ali vsa števila v katerikoli od glavnih diagonal.
@@ -95,8 +97,9 @@ Primer magičnega kvadrata reda 3 je prikazan v tabeli ?!?.
 % Konec magičnega kvadrata
 
 \begin{definicija}
-   Magični kvadrat reda $n$ je \emph{normalen}, če v njem nastopajo števila
+   Magični kvadrat reda $n$ je \pojem{normalen}, če v njem nastopajo števila
    \begin{equation}
+      \label{eq:numbers}
       % oznaka: eq:numbers
       1, 2, 3, \ldots, n^2-1, n^2.
    \end{equation}
@@ -113,7 +116,7 @@ Poleg normalnih magičnih kvadratov so zanimivi tudi magični kvadrati praštevi
 \subsection{Kvadrat ">Lo Shu"<}
 
 Kitajska literatura iz časa vsaj 2800 let pred našim štetjem govori o legendi
-\emph{Lo Shu} -- ">zvitek reke Lo"<. V antični Kitajski je prišlo do
+\pojem{Lo Shu} -- ">zvitek reke Lo"<. V antični Kitajski je prišlo do
 silne poplave. Ljudje so skušali rečnemu bogu narasle reke Lo ponuditi daritev,
 da bi pomirili njegovo jezo. Iz vode se je prikazala želva z zanimivim vzorcem
 na oklepu: v tabeli velikosti tri krat tri so bila predstavljena števila, tako
@@ -139,7 +142,7 @@ v številnih kulturah, npr.\ v Egiptu in Indiji, vklesane v kamen ali
 kovino, uporabljane kot talismane za dolgo življensko dobo in v
 izogib boleznim.
 
-\emph{Kubera-Kolam} je talna poslikava, ki se uporablja v Indiji, in je v
+\pojem{Kubera-Kolam} je talna poslikava, ki se uporablja v Indiji, in je v
 obliki magičnega kvadrata reda 3. Ta je v bistvu enak kot kvadrat
 Lo Shu, vendar je vsako število povečano za 19.
 
@@ -163,7 +166,7 @@ v Khajurahu v Indiji in v Enciklopediji Bratovščine Čistosti iz enajstega
 ali dvanajstega stoletja. Vrh vsega gre celo za ">panmagični kvadrat"<.
 V Evropi sta morda najbolj znana naslednja magična kvadrata reda 4:
 
-Magični kvadrat v litografiji Melancholia I (glej sliko ??
+Magični kvadrat v litografiji Melancholia I (glej sliko \ref{fig:durer}
 za izsek s kvadratom) Albrechta Dürerja naj bi bil najzgodnejši magični kvadrat
 v evropski umetnosti. Zelo podoben je kvadratu Yang Huija, ki je nastal na Kitajskem
 približno 250 let pred Dürerjevim časom. % sklic: fig:durer
@@ -195,18 +198,17 @@ simetričnih parov ($2+8+9+15$ in $3+5+12+14$), in še na nekaj drugih načinov.
 %    4 & 15 & 14 &  1 \\\hline
 
 Pasijonska fasada na katedrali Sagrada família v Barceloni
-(glej sliko ?? za fotografijo) vsebuje magični kvadrat reda 4.
+(glej sliko \ref{fig:sagrada} za fotografijo) vsebuje magični kvadrat reda 4.
 % sklic: fig:sagrada
+% Tu vstavite sliko
+% - napis nad sliko: Pasijonska fasada, Sagrada Família
+% - oznaka: fig:sagrada
 \begin{figure}[!ht]
    \centering
    \caption{Pasijonska fasada, Sagrada Família}
    [\includegraphics{sagrada.png}]
    \label{fig:sagrada}
 \end{figure}
-
-% Tu vstavite sliko
-% - napis nad sliko: Pasijonska fasada, Sagrada Família
-% - oznaka: fig:sagrada
 
 Vsota števil v vrsticah, stolpcih oziroma na diagonalah je 33 -- Jezusova starost
 v času pasijona. Strukturno je kvadrat podoben Dürerjevemu, vendar so števila
@@ -226,15 +228,16 @@ in zato kvadrat ni normalen.
 
 \begin{definicija}
       Vsoto ene vrstice, enega stolpca ali ene od glavnih diagonal
-      v magičnem kvadratu imenujemo \emph{magična konstanta}.
+      v magičnem kvadratu imenujemo \pojem{magična konstanta}.
 \end{definicija}
 
 % Začetek okolja izrek
    
    \begin{izrek}
-      Magična konstanta normalnega magičnega kvadrata reda !!
+      Magična konstanta normalnega magičnega kvadrata reda $n$
       je enaka
       \begin{equation}
+         \label{eq:mc}
          % oznaka: eq:mc
          M_2(n) = \frac{1}{2} n(n^2+1)
       \end{equation}
@@ -244,23 +247,23 @@ in zato kvadrat ni normalen.
 % Začetek dokaza
    \begin{proof}
       V normalnem magičnem kvadratu reda $n$ je vsota vseh nastopajočih
-      števil (glej ?? na strani ??) enaka
+      števil (glej \ref{eq:numbers} na strani \pageref{eq:numbers}) enaka
       $1+2+3+\dots+n^2=\sum_{k=1}^{n^2}k=\frac{1}{2}n^2(n^2+1)$. Ker imamo
       v kvadratu $n$ vrstic z enako vsoto, je vsota števil v eni vrstici
       enaka številu $M_2(n)$. % sklica: eq:numbers, eq:numbers
    \end{proof}
 % Konec dokaza
 
-Preprost račun pokaže, da je konstanti ?? analogna konstanta
+Preprost račun pokaže, da je konstanti \ref{eq:mc} analogna konstanta
 $M_2(n;A,D)$ za magični kvadrat, v katerem so nameščena števila
 $A$, $A+D$, $A+2D$, \dots, $A+(n^2-1)D$, enaka % sklic: eq:mc
-!!
+$$\mathcal{M}(n;A,D)=\frac{1}{2}n(2A + D(n^2-1))$$
 Kvadratu v tabeli ?!? ustrezata konstanti $A=20$ in $D=1$.
 
 \begin{definicija}
       Če vsako od števil v normalnem magičnem kvadratu reda $n$ odštejemo
       od števila $n^2+1$, dobimo nov magični kvadrat, ki je prvotnemu
-      \emph{komplementaren}.
+      \pojem{komplementaren}.
 \end{definicija}
 
 Na primer, magičnemu kvadratu Lo Shu (glej tabelo ?!?) priredimo
@@ -279,11 +282,11 @@ iz kvadrata Lo Shu z zrcaljenjem preko sredinske vodoravne črte.
 Število različnih normalnih magičnih kvadratov
 
 \begin{definicija}
-      Pravimo, da sta dva magična kvadrata \emph{različna}, če enega ni mogoče dobiti
+      Pravimo, da sta dva magična kvadrata \pojem{različna}, če enega ni mogoče dobiti
       iz drugega s pomočjo zasukov oziroma zrcaljenj.
 \end{definicija}
 
-Števila različnih normalnih magičnih kvadratov se nahajajo v tabeli ??.
+Števila različnih normalnih magičnih kvadratov se nahajajo v tabeli \ref{table:stevila}.
 % sklic: table:stevila
 
 % - napis nad tabelo: Število različnih normalnih magičnih kvadratov
