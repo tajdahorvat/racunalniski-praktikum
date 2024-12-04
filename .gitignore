@@ -10,7 +10,6 @@
 *.fls
 *.log
 *.out
-*.pdf
 *.pyc
 *.synctex.gz
 
